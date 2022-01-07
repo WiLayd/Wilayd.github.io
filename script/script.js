@@ -8,6 +8,7 @@ let skills = document.querySelector(".skills");
 let social = document.querySelector(".social");
 let education = document.querySelector(".education");
 let footer = document.querySelector(".footer");
+console.log(about.offsetTop);
 
 menuBurger.addEventListener('click', (event) => {
     menuBurger.classList.toggle('active');
@@ -19,10 +20,14 @@ nav.forEach(item => {
     item.addEventListener('click', (event) => {
         event.preventDefault();
         const goto = item.hasAttribute('href') ? item.getAttribute('href') : 'body';
-        document.querySelector(goto).scrollIntoView({
-            behavior: "smooth",
-            block: "start"
-        })
+        // document.querySelector(goto).scrollIntoView({
+        //     behavior: "smooth",
+        //     block: "start"
+        // })
+        window.scrollTo({
+            top: document.querySelector(goto).offsetTop - 70,
+            behavior: 'smooth'
+          });
         menuBurger.classList.remove('active');
         headerNav.classList.remove('active');
         body.classList.remove('lock');
