@@ -20,10 +20,6 @@ nav.forEach(item => {
     item.addEventListener('click', (event) => {
         event.preventDefault();
         const goto = item.hasAttribute('href') ? item.getAttribute('href') : 'body';
-        // document.querySelector(goto).scrollIntoView({
-        //     behavior: "smooth",
-        //     block: "start"
-        // })
         window.scrollTo({
             top: document.querySelector(goto).offsetTop - 70,
             behavior: 'smooth'
